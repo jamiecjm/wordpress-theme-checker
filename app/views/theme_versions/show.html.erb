@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @theme_version.theme.name %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @theme_version.version %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @theme_version.details %>
+</p>
+
+<p>
+  <strong>Theme file:</strong>
+  <%= @theme_version.theme_file %>
+</p>
+
+<%= link_to 'Edit', edit_theme_version_path(@theme_version) %> |
+<%= link_to 'Back', theme_versions_path %>

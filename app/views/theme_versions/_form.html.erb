@@ -1,0 +1,37 @@
+<%= form_with(model: theme_version, local: true) do |form| %>
+  <% if theme_version.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(theme_version.errors.count, "error") %> prohibited this theme_version from being saved:</h2>
+
+      <ul>
+      <% theme_version.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :theme_id %>
+    <%= form.select :theme_id, options_for_select(Theme.pluck(:name, :id)), {id: :theme_version_theme_id} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :version %>
+    <%= form.text_field :version, id: :theme_version_version %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_area :details, id: :theme_version_details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :theme_file %>
+    <%= form.file_field :theme_file, id: :theme_version_theme_file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
