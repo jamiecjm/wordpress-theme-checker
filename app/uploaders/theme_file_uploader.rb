@@ -7,7 +7,7 @@ class ThemeFileUploader < CarrierWave::Uploader::Base
   # storage :file
   # storage :fog
 
-  if !Rails.production?
+  if !Rails.env.production?
     storage :file
   else
     include Cloudinary::CarrierWave
