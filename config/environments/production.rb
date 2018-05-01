@@ -89,5 +89,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.middleware.insert 0, Rack::WWWhisper
+  config.action_mailer.default_url_options = { host: 'wordpress-theme-checker.herokuapp.com' }
+
 end

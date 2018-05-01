@@ -1,6 +1,8 @@
 class ThemesController < ApplicationController
   before_action :set_theme, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :authenticate_user!, only: :show
+
   # GET /themes
   # GET /themes.json
   def index

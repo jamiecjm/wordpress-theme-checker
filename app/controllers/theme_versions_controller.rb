@@ -1,6 +1,8 @@
 class ThemeVersionsController < ApplicationController
   before_action :set_theme_version, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :authenticate_user!, only: :show
+
   # GET /theme_versions
   # GET /theme_versions.json
   def index
